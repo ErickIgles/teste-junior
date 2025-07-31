@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import index
+from .views import ListaAbatecimentoView, AbastecimentoCreateView
 
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', ListaAbatecimentoView.as_view(), name='index'),
+    path('registrar/', AbastecimentoCreateView.as_view(), name='registrar_abastecimento'),
 ]
