@@ -42,7 +42,7 @@ class Bomba(Base):
 
 class Abastecimento(Base):
     bomba = models.ForeignKey(Bomba, verbose_name='Bomba', on_delete=models.CASCADE)
-    litros_abastecidos = models.IntegerField(verbose_name='Litros consumido')
+    litros_abastecidos = models.IntegerField(verbose_name='Litros abastecidos')
     valor = models.DecimalField(verbose_name='Valor', max_digits=8 ,decimal_places=2)
 
     class Meta:
