@@ -43,16 +43,16 @@ class Bomba(Base):
 class Abastecimento(Base):
     bomba = models.ForeignKey(Bomba, verbose_name='Bomba', on_delete=models.CASCADE)
     litros_consumido = models.IntegerField(verbose_name='Litros consumido')
-    valor = models.DecimalField(verbose_name='Valor', max_digits=4 ,decimal_places=2)
+    valor = models.DecimalField(verbose_name='Valor', max_digits=8 ,decimal_places=2)
 
     class Meta:
         verbose_name = 'Abastecimento'
         verbose_name_plural = 'Abastecimentos'
     
     
-    def save(self, commit=False):
-        self.valor = self.valor + (self.valor * 0.13)
-        return super().save(commit=True)
+    def save(self, *args, **kwargs):
+        self.valor = self.valor + ((self.valor * 13)/100)
+        return super().save(*args, **kwargs)
     
     def __str__(self):
         return f'{self.bomba} {self.litros_consumido} {self.valor}'
