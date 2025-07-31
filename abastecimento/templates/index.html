@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Listagem de Abastecimentos</h1>
-
+    <a href="{% url 'registrar_abastecimento' %}"><button type="button">Registar abastecimento</button></a>
     {% if registros %}
         
         {% for registro in registros %}
