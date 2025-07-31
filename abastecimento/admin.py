@@ -17,6 +17,6 @@ class BombaAdmin(admin.ModelAdmin):
 
 @admin.register(Abastecimento)
 class AbastecimentoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'bomba', 'litros_consumido', 'valor']
-    list_display_links = ['id', 'bomba', 'litros_consumido', 'valor']
+    list_display = ['id', 'bomba', 'litros_abastecidos', 'valor']
+    list_display_links = ['id', 'bomba', 'litros_abastecidos', 'valor']
 
