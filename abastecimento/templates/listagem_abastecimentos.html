@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Listagem de abastecimentos{% endblock %}
+
+
+{% block main %}
+    {% if registros %}
+        {% for registro in registros %}
+            <div>
+                <h2><strong>Relatório: </strong>{{ registro.pk }}</h2>
+                <h3><strong>Bomba: </strong> {{ registro.bomba.nome_bomba }}</h3>
+                <p><strong>Tipo de combustível: </strong> {{ registro.bomba.tanque.tipo_combustivel }}</p>
+                <p><strong>Listros abastecidos: </strong>{{ registro.litros_abastecidos }}</p>
+                <p><strong>valor total com imposto: R$</strong>{{ registro.valor }} reais</p>
+                <p><strong>Data de registro: </strong>{{ registro.criado }}</p>
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h2>Ainda não há registros no sistema</h2>
+    {% endif %}
+{% endblock %}
