@@ -1,15 +1,21 @@
 from django.shortcuts import render
 
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import TemplateView, CreateView, ListView
 
 from .models import Abastecimento
 from .forms import AbastecimentoForm
 
+
+class IndexTemplateView(TemplateView):
+    template_name = 'base.html'
+
+
+
 class ListaAbatecimentoView(ListView):
     model = Abastecimento
     queryset = Abastecimento.objects.all()
-    template_name = 'index.html'
+    template_name = 'listagem_abastecimentos.html'
     context_object_name = 'registros'
 
 
