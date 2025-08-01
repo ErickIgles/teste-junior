@@ -7,6 +7,7 @@
     {% block title %}<title>Home</title>{% endblock %}
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 </head>
 <body>
     <header>Cabeçalho</header>
@@ -18,7 +19,7 @@
                     <li class="menu-navegacao-lista-item">
                         <button type="button" class="menu-alternativo">Cadastros</button>
                         <ul class="submenu-lista">
-                            <li><a href="#">Cadastrar Tanque</a></li>
+                            <li><a href="{% url 'registrar_tanque' %}">Cadastrar Tanque</a></li>
 
                             <li><a href="#">Cadastrar Bomba</a></li>
                         </ul>
