@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Abastecimento
+from .models import Abastecimento, Tanque
 
 
 class AbastecimentoForm(forms.ModelForm):
@@ -8,4 +8,11 @@ class AbastecimentoForm(forms.ModelForm):
     class Meta:
         model = Abastecimento
         fields = ['bomba', 'litros_abastecidos', 'valor']
+
+
+class TanqueForm(forms.ModelForm):
+    
+    class Meta:
+        model = Tanque
+        fields = ['tipo_combustivel', 'quantidade']
 

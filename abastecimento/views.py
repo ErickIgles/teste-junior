@@ -3,8 +3,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView
 
-from .models import Abastecimento
-from .forms import AbastecimentoForm
+from .models import Abastecimento, Tanque
+from .forms import AbastecimentoForm, TanqueForm
 
 
 class IndexTemplateView(TemplateView):
@@ -25,3 +25,9 @@ class AbastecimentoCreateView(CreateView):
     template_name = 'abastecimento_form.html'
     success_url = reverse_lazy('index')
 
+
+class CadastrarTanqueView(CreateView):
+    model = Tanque
+    form_class = TanqueForm
+    template_name = 'tanque_form.html'
+    success_url = reverse_lazy('index')
